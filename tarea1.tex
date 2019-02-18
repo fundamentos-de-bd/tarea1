@@ -109,32 +109,60 @@
                 \end{itemize} 
                 }
                 \item {Orientado a objetos\\
-                Los datos se modelan como objetos.
+                Los datos se modelan como objetos. Cada dato es una instancia 
+                de un objeto, donde el estado de cada objeto (los atributos) 
+                son otros objetos.
+                    
                 \begin{itemize}
                     \item {Estructura\\
-                    Cada dato es una instancia de un objeto, donde el estado de 
-                    cada objeto (los atributos) son otros objetos.
-                    \begin{itemize}
-                        \item {Estructura\\
-                        Son objetos}
-                        \item {Restricciones de integridad \\
-                        Las mismas que en la orientación a objetos. Hay 
-                        restricciones de tipo, y si se manejan los atrributos 
-                        como apuntadores, se tiene integridad referencial.
-                        También se tiene el encapulamiento de datos}
-                        \item{Operaciones \\
-                        Son los métodos de los objetos.
-                        }
-                    \end{itemize}}
-                \end{itemize}}
+                    Son objetos}
+                    \item {Restricciones de integridad \\
+                    Las mismas que en la orientación a objetos. Hay 
+                    restricciones de tipo, y si se manejan los atrributos 
+                    como apuntadores, se tiene integridad referencial.
+                    También se tiene el encapulamiento de datos}
+                    \item{Operaciones \\
+                    Son los métodos de los objetos.
+                    }
+                \end{itemize}
+                }
             \end{itemize}
         }
         \item {
             Elabora una \textbf{línea de tiempo} en dónde indiques los principales
             hitos en el desarrollo de las bases de datos.
-            \startchronology[startyear=1950, stopyear=2010]
+            \startchronology[startyear=1959, stopyear=1980]
+            \chronoevent{1966}{IBM IMS}
+            \chronoevent{1969}{MR}
+            \chronoevent{1971}{CODASYL}
+            \chronoevent{1974}{Ingres}
+            \chronoevent{1976}{E/R}
+            \chronoevent{1977}{SysR}
             \stopchronology
             }
+            \startchronology[startyear=1981, stopyear=2000]
+            \chronoevent{1985}{OO}
+            \chronoevent{1986}{SQL}
+            \chronoevent{1995}{Internet}
+            \chronoevent{1997}{XML}
+            \stopchronology
+            Donde 
+            \begin{itemize}
+                \item {IBM IMS: IBM Information Managment System}
+                \item {MR: Modelo relacional, propuesto por E. Codd}
+                \item {CODASYL: Estandar del modelo de redes, definido en la 
+                conferencia CODASYL de 1971}
+                \item {Ingres: origen de Postgres}
+                \item {Modelo Entidad/Relación}
+                \item {System R: origen de IBM DB2}
+                \item {Modelo Orientado a Objetos}
+                \item {SQL: Standard Query Language se definice com estándar en 
+                1971 por la INS y la ANSI}
+                \item {Primeras aplicaciones de internet que acceen a bases de
+                datos}
+                \item {XML: se utiliza para procesar las bases de datos para 
+                resolver problemas varios}
+            \end{itemize}
         \item {
             Indica las responsabilidades que tiene un \textbf{Sistema Manejador
             de Bases de Datos} y para cada responsabilidad, explica los problemas
