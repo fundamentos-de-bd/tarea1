@@ -6,6 +6,14 @@
 
 \usepackage{enumitem}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
 
 \begin{document}
     \title{Fundamentos de Bases de Datos \\
@@ -42,6 +50,80 @@
             Indica las principales caracterísitcas de alguno de los siguientes 
             modelos de bases de datos: \textbf{jerárquico, de red, orientado 
             a objetos}.
+            \begin{itemize}
+                \item {Jerárquico\\
+                Los datos se almacenan en una estructura de árbol, donde cada 
+                dato tiene un padre, excepto un dato raíz, y posiblemente varios
+                o ningún hijo. \\
+                Funciona de forma similar al sistema de archivos de un sistema 
+                operativo.
+                \begin{itemize}
+                    \item {Estructura \\
+                    En general, es un árbol. La estructura de los subárbles no 
+                    está limitada.
+                    }
+                    \item {Restricciones de integridad \\
+                    Cada nodo tiene un sol dato. Se pueden definir los tipos de 
+                    nodos posibles, cada nodo con atributos que a su vez son nodos.\\
+                    Puede o no haber restricciones de unicidad, pero como para 
+                    acceder a un dato hay que recorrer el árbol, esto puede ser 
+                    difícil de mantener. \\
+                    Tampoco hay restricciones de integridad, pues no es posible 
+                    definir llaves foráneas al sólo poder tener un sólo padre. 
+                    }
+                    \item {
+                    Operaciones \\
+                    Las mismas operaciones que en un árbol. Notemos que como hay
+                    padre únicos, no se pueden modelar de forma sencilla relaciones
+                    de muchos a muchos. Además, para mantener el árbol, insertar 
+                    un dato puede cambiar radicalmente toda la estructura, y para
+                    realizar consultas hay que realizar recorridos por el árbol.
+                    }
+                \end{itemize}
+                }
+                \item {
+                De red \\
+                Dados los problemas del modelo jerárquico, se creó el modelo de 
+                redes. En lugar de tener una estructura de árbol, se tiene una 
+                una estructura más general de gráfica. Esto da más flexibilidad 
+                en cuanto a las relaciones posibles.
+                \begin{itemize}
+                    \item {Estructura \\
+                    Es una estructura de gráfica. Cada nodo puede tener varios 
+                    padres e hijos}
+                    \item {Restricciones de integridad \\
+                    Igualmente que en el modelo jerárquico, se pueden definir los 
+                    tipos de nodo. 
+                    }
+                    \item{Operaciones \\
+                    Las mismas operaciones que en una gráfica. Aunque se puede
+                    definir relaciones de muchos a muchos, y por lo tanto se 
+                    pueden dar restricciones de integridad referencial, acceder a
+                    un datos sigue requiriendo un recorrido de la gráfica, lo 
+                    que dificulta mantener la integridad de unicidad.
+                    }
+                \end{itemize} 
+                }
+                \item {Orientado a objetos\\
+                Los datos se modelan como objetos.
+                \begin{itemize}
+                    \item {Estructura\\
+                    Cada dato es una instancia de un objeto, donde el estado de 
+                    cada objeto (los atributos) son otros objetos.
+                    \begin{itemize}
+                        \item {Estructura\\
+                        Son objetos}
+                        \item {Restricciones de integridad \\
+                        Las mismas que en la orientación a objetos. Hay 
+                        restricciones de tipo, y si se manejan los atrributos 
+                        como apuntadores, se tiene integridad referencial.
+                        También se tiene el encapulamiento de datos}
+                        \item{Operaciones \\
+                        Son los métodos de los objetos.
+                        }
+                    \end{itemize}}
+                \end{itemize}}
+            \end{itemize}
         }
         \item {
             Elabora una \textbf{línea de tiempo} en dónde indiques los principales
@@ -50,7 +132,23 @@
         \item {
             Indica las responsabilidades que tiene un \textbf{Sistema Manejador
             de Bases de Datos} y para cada responsabilidad, explica los problemas
-            que surgirían si dicha responsabilidad no se cumpliera.
+            que surgirían si dicha responsabilidad no se cumpliera. \\
+            Un SMBD tiene como responsabilidades
+            \begin{itemize}
+                \item {Definir tipos, estructuras y restricciones. De no 
+                funcionar bien, ni siquiera se podría hablar de integridad, pues
+                no se podría definir ningún tipo de regla u estructura correcta.}
+                \item {Construir la parte física de la base de datos. De no 
+                realizarse correctamente, se podrían perder o corromper los datos}
+                \item {Manipular los datos, como en funciones u operaciones. De
+                no fucnionar adecuadamente, podría pasar que datos perfectamente
+                válidos pierdan su integridad(sean alterados) después de ser 
+                manipulados}
+                \item {Compartir la base de datos en diferentes vistas. De no 
+                funcionar bien, los datos a los que se acceden pueden ser erróneos,
+                a pesar de que internamente la base de datos funcione 
+                perfectamente}
+            \end{itemize}
         }
         \item {
             Supón que una pequeña compañía desea almacenar su información en una
@@ -82,4 +180,11 @@
     \end{enumerate}
 
     \section{Referencias}
+    \begin{thebibliography}{}
+        \bibitem[Gil15]{Gil15}
+            Gilfillan, I. (2015, June 8). Exploring Early Database Models. 
+            Retrieved February 17, 2019, from 
+            \href{https://mariadb.com/kb/en/library/exploring-early-database-models/}
+            {https://mariadb.com/kb/en/library/exploring-early-database-models/}
+    \end{thebibliography}
 \end{document}
