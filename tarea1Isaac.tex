@@ -1,0 +1,131 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+
+\usepackage[margin = 1.5cm]{geometry}
+
+\usepackage{enumitem}
+
+
+\begin{document}
+    \title{Fundamentos de Bases de Datos \\
+        Tarea 1 \\
+        Conceptos básicos} 
+    \author{Díaz Gómez Silvia \\
+    Eugenio Aceves Narciso Isaac \\
+    Quiroz Castañeda Edgar}
+    \date{18 de febrero del 2019}
+    \maketitle
+
+    \section{Conceptos generales}
+
+    \begin{enumerate}[label=\alph*.]
+        \item {
+            ¿Porqué elegirías almacenar datos en un \textbf{sistema de bases 
+            datos} en lugar de simplemente almacenarlos utilzizando el 
+            \textbf{sistema de archivos} de un sistema operativo?¿En qué caso no
+            tendría sentido utilizar un sistema de bases de datos?
+        }
+            {
+                Elegiría el SBD si vale la pena la inversión en tiempo y recursos
+                en todo el diseño e infraestructura de la relacionados. Es decir, si mis 
+                necesidades involucran preservar la integridad de los datos, tener un manejo
+                eficiente y permitir el acesso a varias personas conforme a peticiones.
+                También esperaría sean muchos los datos que se planea almacenar, que 
+                estos tengan una estructura bien definida y se relacionen entre sí.\\
+                Cuando tengo una situación como la anterior no me conviene usar el sistema
+                de almacenamiento del SO porque puede ser problemático organizar, editar
+                y buscar datos, no tendría las ventajas del SMBD y proporcionar accesso a
+                través de consultas a datos específicos también requeriría mucho trabajo.\\
+                Cuando dejan de cumplirse parte de las condiciones planteadas al inicio, pueden
+                existir alternativas viables que me permiten hacer lo que quiero sin tener que 
+                pasar por todo el proceso de crear un SBD; más simples y versatiles.
+                Por ejemplo, si sólo quiero hacer unas tablas para mi tarea, general algunas
+                gráficas a partir de ellas y realizar unos calculos (promedios, sumas de
+                secciones, etc.) Excel o alguna herramienta similar sería una buena opción.
+            }
+        \item {
+            ¿Qué \textbf{ventajas}  y \textbf{desventajas} encuentras al 
+            trabajar con una \textbf{base de datos}?
+        }
+            {
+                Las ventajas de trabajar con una base de datos estan dadas por las garantías
+                y características que le da el diseño y SMBD; integridad de datos, operacones 
+                básicas, chequeo de redundancia, un sistema robusto capaz de crecer...\\
+                En cuanto a desventajas, estas dependen de los límites en el diseño, por 
+                ejemplo,  quiero guaradar un historial junto con los datos actuales (Almacenes) 
+                o mi modelo no me permite representar lo que necesito) y el costo en tiempo y
+                recursos de realizar una implementacion buena de mi BD. Sin contar la dificultad.
+            }
+        \item {
+            Explica las diferencias entre los esquemas \textbf{externos}, 
+            \textbf{conceptual} y \textbf{físico}. ¿Cómo se relacionan estos 
+            conceptos con la \textbf{independencias física} y \textbf{lógica}? 
+        }
+            {
+                El esquema externo depende unicamente del planteamiento de mi problema;
+                representa los procesos de los usuarios que me interesa permitir.
+                Una vez que se define se pasa al esquema conceptual, en el cual se busca 
+                determinar como va a funcionar la base de datos en abstracto.
+                El esquema físico finalmente se refiere a los detalles de la implementación; 
+                metadatos, almacenamiento, etc.
+                La independencia física marca el punto en el que se puede separar el nivel 
+                físico de los otros aspectos de la base de datos (Nivel conceptual y externo).
+                Asimismo, la independencia lógica separa el Nivel externo del resto de la
+                infraestructura de la BD, ya que el uso que se le da a la base no debería
+                relacionarse con la infraestructura de la BD; el usuario no  necesita saber.
+            }
+        \item {
+            ¿Qué es el \textbf{diccionario de datos} y por qué es importante?
+        }
+            {
+                Es la parte de la base de datos encargada de preservar el modo en el que se
+                accede/describe a los datos. Desde el cómo se ven almacenados en la comp.
+                hasta que nombre tiene la columna a la que pertenece este dato. Es decir,
+                contiene a los metadatos que describen en general de la BD.
+            }
+        \item {
+            Indica las principales caracterísitcas de alguno de los siguientes 
+            modelos de bases de datos: \textbf{jerárquico, de red, orientado 
+            a objetos}.
+        }
+        \item {
+            Elabora una \textbf{línea de tiempo} en dónde indiques los principales
+            hitos en el desarrollo de las bases de datos.
+            }
+        \item {
+            Indica las responsabilidades que tiene un \textbf{Sistema Manejador
+            de Bases de Datos} y para cada responsabilidad, explica los problemas
+            que surgirían si dicha responsabilidad no se cumpliera.
+        }
+        \item {
+            Supón que una pequeña compañía desea almacenar su información en una
+            base de datos. Desea comprar la que tenga la menor cantidad de 
+            caracterísitcas posibles, se desea ejecutar la aplicación en una 
+            sólo computadora personal y no se planea compartir la información con
+            nadie. Para cada una de las siguientes características, explica por
+            qué se debería o no incluir en la base de datos que se desea comprar
+            (suponiendo que se pieden comprar por separado): \textbf{seguridad, 
+            control de concurrencia, recuperación en caso de fallos, lengua de 
+            consulta, mecanismo de visitas, manejo de transacciones}.
+        }
+    \end{enumerate}
+
+    \section{Invetigación}
+    \begin{enumerate}[label=\alph*.]
+        \item {
+            ¿Qué es la \textbf{Calidad de Datos} y cómo se relaciona con las 
+            bases de datos?
+        }
+        \item {
+            Especifica las caracterísitcas más importantes de las bases de datos
+            \textbf{NoSQL}, indica el modelo de datos que utilizan y sus 
+            principales proveedores.
+        }
+        \item {
+            ¿Qué es un \textbf{ORM}?
+        }
+    \end{enumerate}
+
+    \section{Referencias}
+\end{document}
